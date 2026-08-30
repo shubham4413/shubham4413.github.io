@@ -128,23 +128,22 @@
       <article class="project">
         <div class="project-meta">
           <span>03</span>
-          <span>LeRobot · PyTorch · VLA</span>
+          <span>ROS 2 · Gazebo · ACT · LeRobot</span>
           <span>2026–present</span>
-          <span>177 episodes</span>
+          <span>100 sim + 177 physical episodes</span>
         </div>
         <div class="project-copy">
-          <h3>SO-101 robot data and VLA-JEPA experiment</h3>
+          <h3>SO-101 real/sim data and closed-loop ACT policy</h3>
           <p>
-            I collected and published 177 teleoperated stacking and unstacking episodes with 355,884 frames, two synchronized RGB views, and 6-DoF robot states and actions. I then ran a 30,000-step PEFT/LoRA fine-tuning experiment with VLA-JEPA on one H100. Training completed, but deployment did not yield working robot inference, a useful reminder that optimizing a training objective is not the same as closing the loop on hardware.
+            I recreated my physical nut-stacking task in Gazebo and built a ROS 2 pipeline for inverse-kinematics-based grasping, lifting, and stacking demonstrations. A randomized headless collector generated 100 successful multi-camera episodes in LeRobot format with synchronized states and actions. I trained a 52M-parameter ACT policy from scratch on an RTX 4070 using pretrained ResNet-18 visual features, then connected it through a closed-loop inference bridge with synchronized camera feedback and safety-bounded joint commands. The policy achieved autonomous nut stacking in Gazebo. Alongside the simulation pipeline, I collected and published 177 physical-arm episodes with 355,884 frames, creating matched task data for future sim-to-real evaluation.
           </p>
           <div class="project-links">
             <a class="text-link" href="https://huggingface.co/datasets/shubham4413/so101_wm" target="_blank" rel="noreferrer">Dataset <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="https://huggingface.co/shubham4413/so101_vla_jepa_stack" target="_blank" rel="noreferrer">Model <span aria-hidden="true">↗</span></a>
           </div>
         </div>
         <div class="project-media">
-          <video controls muted playsinline preload="metadata" aria-label="Teleoperated SO-101 arm data collection for stacking and unstacking tasks">
-            <source src="assets/so101_dataset.mp4" type="video/mp4">
+          <video controls muted playsinline preload="metadata" aria-label="Autonomous SO-101 nut stacking with a closed-loop ACT policy in Gazebo">
+            <source src="assets/so101_act_gazebo_web.mp4" type="video/mp4">
             Your browser does not support embedded video.
           </video>
         </div>
