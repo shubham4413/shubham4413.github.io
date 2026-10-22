@@ -150,9 +150,37 @@
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="erh-physical-ai">
         <div class="project-meta">
           <span>04</span>
+          <span>ERH Physical AI Hackathon · Team Trainers</span>
+          <span>October 17–18, 2026</span>
+          <span>2nd in track · Imagine, then Act</span>
+        </div>
+        <div class="project-copy">
+          <h3>A world action model for tabletop cleanup</h3>
+          <p>
+            Our team, Trainers, placed second in the “Imagine, then Act” track at the 30-hour ERH Physical AI Hackathon, held October 17–18, 2026 at DARE campus in Zurich. We tested Black Forest Labs' FLUX.3 Action SO-101 world action model on a physical arm, with scene and wrist cameras and remote inference on AWS using an NVIDIA H100. Calibration issues limited the zero-shot results.
+          </p>
+          <p>
+            We collected 100 training episodes each for paper-cup stacking and placing Snickers bars on a plate, with other objects randomly scattered across the table. We fine-tuned on these 200 episodes at batch size 2 for 6,000 steps and compared the 3,000-, 4,000-, and 6,000-step checkpoints. The best checkpoint, at 6,000 steps, succeeded in 8 of 10 physical-robot Snickers-placement trials and 5 of 10 cup-stacking trials. The public dataset contains 300 episodes; the working model used the 200-episode training subset. The highlight video shows both tasks.
+          </p>
+          <div class="project-links">
+            <a class="text-link" href="https://huggingface.co/datasets/shubham4413/erh_so101" target="_blank" rel="noreferrer">Dataset <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://huggingface.co/black-forest-labs/flux-3-action-so101" target="_blank" rel="noreferrer">Base model <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="project-media">
+          <video controls muted playsinline preload="metadata" poster="assets/erh_physical_ai_poster.jpg" aria-label="Team Trainers' ERH hackathon highlights: physical SO-101 cup stacking and chocolate placement">
+            <source src="assets/erh_physical_ai_highlights.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="assets/erh_physical_ai_highlights.mp4">Watch the ERH task highlights.</a>
+          </video>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-meta">
+          <span>05</span>
           <span>Robot learning · Simulation</span>
           <span>2026–present</span>
           <span>35th globally</span>
@@ -173,7 +201,7 @@
 
       <article class="project">
         <div class="project-meta">
-          <span>05</span>
+          <span>06</span>
           <span>ROS 2 · Gazebo · ACT · LeRobot</span>
           <span>2026–present</span>
           <span>100 simulation episodes</span>
@@ -194,7 +222,7 @@
 
       <article class="project">
         <div class="project-meta">
-          <span>06</span>
+          <span>07</span>
           <span>ROS 2 · MoveIt Servo · Teleoperation</span>
           <span>2024–2025</span>
           <span>Physical Kinova Gen3</span>
