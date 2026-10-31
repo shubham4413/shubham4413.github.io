@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmolVLA nut stacking, Shubham Nagar</title>
+  <meta name="description" content="Three SmolVLA policies fine-tuned on physical SO-101 demonstrations and scored on the real arm. The best checkpoint reached 75% full-stack success.">
+  <meta name="theme-color" content="#dedad3">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='14' y='26' width='36' height='12' fill='%23dedad3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="page-top">
+    <a class="wordmark link" href="../index.html#smolvla">Shubham Nagar</a>
+    <nav class="profiles" aria-label="Profiles">
+      <a class="link" href="https://github.com/shubham4413" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="link" href="https://www.linkedin.com/in/shubham-nagar-5a8174184/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="link" href="https://huggingface.co/shubham4413" target="_blank" rel="noreferrer">Hugging Face</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <h1 id="page-title">SmolVLA nut stacking</h1>
+      <p>Three SmolVLA policies fine-tuned on 80 physical SO-101 demonstrations and scored on the real arm. The best reached 75% full-stack success.</p>
+      <dl>
+        <div><dt>Best checkpoint</dt><dd>75% full stack, 88% pick, 92% grasp</dd></div>
+        <div><dt>Base policy</dt><dd>lerobot/smolvla_base</dd></div>
+        <div><dt>Dataset</dt><dd>160 episodes, 77,104 frames</dd></div>
+      </dl>
+    </section>
+
+    <figure class="page-media">
+      <video data-loop muted loop playsinline preload="none" poster="../assets/clips/smolvla.webp" width="960" height="544" aria-label="SmolVLA policy stacking nuts with a physical SO-101 arm">
+        <source src="../assets/clips/smolvla.mp4" type="video/mp4">
+      </video>
+      <figcaption>A SmolVLA rollout on the physical arm.</figcaption>
+    </figure>
+
+    <section class="chapter" aria-labelledby="setup-title">
+      <h2 id="setup-title">Setup</h2>
+      <dl class="spec" data-reveal>
+        <dt>Robot</dt><dd>SO-100/SO-101-style follower arm, driven by a leader arm for teleoperation</dd>
+        <dt>Cameras</dt><dd>Two 640×480 streams: a top view and a first-person view</dd>
+        <dt>State, action</dt><dd>6-DoF joint state in, 6-DoF joint actions out</dd>
+        <dt>Task</dt><dd>Stack one nut on another</dd>
+      </dl>
+    </section>
+
+    <section class="chapter" aria-labelledby="data-title">
+      <h2 id="data-title">Data</h2>
+      <p data-reveal>I collected 80 additional demonstrations and aggregated them with the original 80 into one LeRobot v3.0 dataset: 160 episodes, 77,104 frames at 30 fps, about 42.8 minutes of leader-follower teleoperation, with both camera streams AV1-encoded. All three policies were trained on the first 80 episodes. The dataset has no held-out split.</p>
+      <ul class="project__links" data-reveal>
+        <li><a class="link-plain" href="https://huggingface.co/datasets/shubham4413/so100_smolvla_rc" target="_blank" rel="noreferrer">Dataset on Hugging Face</a></li>
+        <li><a class="link-plain" href="https://huggingface.co/shubham4413/so100_smolvla_bs16_20k_80ep" target="_blank" rel="noreferrer">Best checkpoint</a></li>
+      </ul>
+    </section>
+
+    <ul class="reel page-reel" data-reel aria-label="Frames from a rollout">
+      <li><img src="../assets/frames/smolvla-001_0.webp" alt="The setup: two red nuts, the arm and the laptop running the policy" width="1272" height="720" loading="lazy"></li>
+      <li class="reel__clip"><img src="../assets/frames/smolvla-018_0.webp" alt="SO-101 placing a nut onto the stack" width="1272" height="720" loading="lazy"></li>
+      <li><img src="../assets/frames/smolvla-030_0.webp" alt="SO-101 adjusting the top nut" width="1272" height="720" loading="lazy"></li>
+      <li><img src="../assets/frames/smolvla-043_0.webp" alt="SO-101 releasing the nut on the stack" width="1272" height="720" loading="lazy"></li>
+    </ul>
+
+    <section class="chapter" aria-labelledby="policy-title">
+      <h2 id="policy-title">Best checkpoint</h2>
+      <dl class="spec" data-reveal>
+        <dt>Training</dt><dd>Batch size 16, 20,000 steps, AdamW, FP32</dd>
+        <dt>Trained parts</dt><dd>Action expert and state projection; the vision encoder stays frozen</dd>
+        <dt>Augmentation</dt><dd>None</dd>
+        <dt>Inputs</dt><dd>Both camera streams and the 6-DoF joint state</dd>
+        <dt>Output</dt><dd>6-DoF joint actions in chunks of 50</dd>
+      </dl>
+    </section>
+
+    <section class="chapter" aria-labelledby="results-title">
+      <h2 id="results-title">Results</h2>
+      <figure class="ckpt ckpt--page" data-ckpt data-reveal>
+        <figcaption class="ckpt__title">Share of physical rollouts reaching each stage</figcaption>
+        <div class="ckpt__switch" role="group" aria-label="Checkpoint">
+          <button type="button" aria-pressed="true" data-ckpt-key="0">Batch 16, 20k steps</button>
+          <button type="button" aria-pressed="false" data-ckpt-key="1">Batch 64, 10k steps</button>
+          <button type="button" aria-pressed="false" data-ckpt-key="2">Batch 64, 20k steps</button>
+        </div>
+        <div class="ckpt__bars" aria-hidden="true">
+          <div class="ckpt__row"><span>Grasp or better</span><div class="ckpt__track"><i data-bar="0"></i></div><b data-val="0">92%</b></div>
+          <div class="ckpt__row"><span>Pick or better</span><div class="ckpt__track"><i data-bar="1"></i></div><b data-val="1">88%</b></div>
+          <div class="ckpt__row"><span>Full stack</span><div class="ckpt__track"><i data-bar="2"></i></div><b data-val="2">75%</b></div>
+        </div>
+        <p class="ckpt__note" data-ckpt-note aria-live="polite"></p>
+        <table class="ckpt__table">
+          <caption class="sr-only">Share of physical rollouts reaching each stage, by checkpoint</caption>
+          <thead><tr><th scope="col">Checkpoint</th><th scope="col">Grasp or better</th><th scope="col">Pick or better</th><th scope="col">Full stack</th></tr></thead>
+          <tbody>
+            <tr data-ckpt-row><th scope="row">Batch 16, 20k steps</th><td>92%</td><td>88%</td><td>75%</td></tr>
+            <tr data-ckpt-row><th scope="row">Batch 64, 10k steps</th><td>55%</td><td>52%</td><td>40%</td></tr>
+            <tr data-ckpt-row><th scope="row">Batch 64, 20k steps</th><td>90%</td><td>90%</td><td>0%</td></tr>
+          </tbody>
+        </table>
+      </figure>
+    </section>
+
+    <section class="chapter chapter--dark" aria-labelledby="fail-title">
+      <h2 id="fail-title">Where it failed</h2>
+      <ul class="failures" data-reveal>
+        <li><b>Batch 64, 20,000 steps</b>Grasped and picked the nut in 90% of rollouts, and completed no stacks.</li>
+        <li><b>Batch 64, 10,000 steps</b>Reached a grasp in 55% of rollouts and finished the stack in 40%.</li>
+        <li><b>Evaluation scope</b>There is no held-out split, so these numbers describe the training task and setup.</li>
+      </ul>
+    </section>
+
+    <nav class="page-next" aria-label="Next project">
+      <a class="big" href="kuka.html">Next: perception to pick on a KUKA iiwa</a>
+      <a class="link-plain" href="../index.html#work">All projects</a>
+    </nav>
+  </main>
+
+  <footer class="foot">
+    <p>Shubham Nagar, robot learning</p>
+    <nav aria-label="Profiles, footer">
+      <a href="https://github.com/shubham4413" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/shubham-nagar-5a8174184/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://huggingface.co/shubham4413" target="_blank" rel="noreferrer">Hugging Face</a>
+    </nav>
+    <p>2026</p>
+  </footer>
+  <script src="../main.js" defer></script>
+</body>
+</html>

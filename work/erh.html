@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ERH Physical AI Hackathon, Shubham Nagar</title>
+  <meta name="description" content="Team Trainers placed 2nd in the Imagine, then Act track at the ERH Physical AI Hackathon in Zurich, fine-tuning FLUX.3 Action on a physical SO-101.">
+  <meta name="theme-color" content="#dedad3">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='14' y='26' width='36' height='12' fill='%23dedad3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="page-top">
+    <a class="wordmark link" href="../index.html#erh">Shubham Nagar</a>
+    <nav class="profiles" aria-label="Profiles">
+      <a class="link" href="https://github.com/shubham4413" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="link" href="https://www.linkedin.com/in/shubham-nagar-5a8174184/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="link" href="https://huggingface.co/shubham4413" target="_blank" rel="noreferrer">Hugging Face</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <h1 id="page-title">ERH Physical AI Hackathon</h1>
+      <p>Team Trainers placed 2nd in the Imagine, then Act track: 30 hours at DARE campus in Zurich, with Black Forest Labs' FLUX.3 Action model on a physical SO-101.</p>
+      <dl>
+        <div><dt>Placed</dt><dd>2nd in the Imagine, then Act track</dd></div>
+        <div><dt>Team</dt><dd>Team Trainers</dd></div>
+        <div><dt>When</dt><dd>October 17 to 18, 2026</dd></div>
+      </dl>
+    </section>
+
+    <figure class="page-media">
+      <video data-loop class="is-composite" muted loop playsinline preload="none" poster="../assets/clips/erh.webp" width="1280" height="720" aria-label="Team Trainers' timelapse of SO-101 Snickers placement and cup stacking, scene and wrist cameras">
+        <source src="../assets/clips/erh.mp4" type="video/mp4">
+      </video>
+      <figcaption>Team Trainers' 20-second timelapse at about 5.2× speed: Snickers placement and paper-cup stacking, scene and wrist cameras side by side.</figcaption>
+    </figure>
+
+    <section class="chapter" aria-labelledby="setup-title">
+      <h2 id="setup-title">Setup</h2>
+      <dl class="spec" data-reveal>
+        <dt>Robot</dt><dd>SO-101 arm</dd>
+        <dt>Cameras</dt><dd>A scene camera over the table and a wrist camera on the gripper</dd>
+        <dt>Model</dt><dd><a class="link-plain" href="https://huggingface.co/black-forest-labs/flux-3-action-so101" target="_blank" rel="noreferrer">black-forest-labs/flux-3-action-so101</a>, a world action model</dd>
+        <dt>Inference</dt><dd>Remote, on an NVIDIA H100 through AWS servers</dd>
+      </dl>
+    </section>
+
+    <section class="chapter" aria-labelledby="data-title">
+      <h2 id="data-title">Data</h2>
+      <p data-reveal>The team collected 100 episodes of stacking paper cups and 100 of placing Snickers bars on a plate, with other objects scattered at random across the table. The working model was trained on these 200 episodes.</p>
+      <p data-reveal>The <a class="link-plain" href="https://huggingface.co/datasets/shubham4413/erh_so101" target="_blank" rel="noreferrer">public dataset</a> holds 300 episodes and 255,518 frames in LeRobot v3.0 format at 30 fps, with scene and wrist cameras and 6-DoF state and action. The 200-episode training set is a subset of it.</p>
+    </section>
+
+    <ul class="reel page-reel" data-reel aria-label="Frames from the scene and wrist cameras">
+      <li><img src="../assets/frames/erh-scene-002_5.webp" alt="Scene camera: SO-101 beside three Snickers bars and a plate" width="960" height="720" loading="lazy"></li>
+      <li><img src="../assets/frames/erh-wrist-003_0.webp" alt="Wrist camera: gripper holding a Snickers bar" width="960" height="720" loading="lazy"></li>
+      <li class="reel__clip"><img src="../assets/frames/erh-scene-006_0.webp" alt="Scene camera: Snickers bar placed on the plate" width="960" height="720" loading="lazy"></li>
+      <li><img src="../assets/frames/erh-scene-013_5.webp" alt="Scene camera: SO-101 over two paper cups" width="960" height="720" loading="lazy"></li>
+      <li><img src="../assets/frames/erh-wrist-017_0.webp" alt="Wrist camera: gripper beside a paper cup" width="960" height="720" loading="lazy"></li>
+      <li><img src="../assets/frames/erh-scene-018_5.webp" alt="Scene camera: cups stacked" width="960" height="720" loading="lazy"></li>
+    </ul>
+
+    <section class="chapter" aria-labelledby="policy-title">
+      <h2 id="policy-title">Training</h2>
+      <p data-reveal>We first ran the model zero-shot on our arm, then fine-tuned it on the 200 episodes at batch size 2 for 6,000 steps. We compared the checkpoints at 3,000, 4,000 and 6,000 steps on the physical robot, and the 6,000-step checkpoint performed best.</p>
+    </section>
+
+    <section class="chapter chapter--dark" aria-labelledby="results-title">
+      <h2 id="results-title">Results</h2>
+      <div data-reveal>
+        <table class="plain-table plain-table--dark">
+          <caption class="sr-only">Physical-robot trials with the 6,000-step checkpoint</caption>
+          <thead><tr><th scope="col">Task, 6,000-step checkpoint</th><th scope="col">Trials</th><th scope="col">Success</th></tr></thead>
+          <tbody>
+            <tr><td>Snickers placement</td><td>8 of 10</td><td>80%</td></tr>
+            <tr><td>Paper-cup stacking</td><td>5 of 10</td><td>50%</td></tr>
+          </tbody>
+        </table>
+        <p class="table-note">Each task was scored on its own trials, not in combined runs.</p>
+      </div>
+    </section>
+
+    <section class="chapter" aria-labelledby="limits-title">
+      <h2 id="limits-title">What limited it</h2>
+      <ul class="failures" data-reveal>
+        <li><b>Zero-shot runs</b>Calibration issues limited the model's zero-shot performance on our arm. The working results above came after fine-tuning on the team's own demonstrations.</li>
+      </ul>
+    </section>
+
+    <nav class="page-next" aria-label="Next project">
+      <a class="big" href="smolvla.html">Next: SmolVLA nut stacking</a>
+      <a class="link-plain" href="../index.html#work">All projects</a>
+    </nav>
+  </main>
+
+  <footer class="foot">
+    <p>Shubham Nagar, robot learning</p>
+    <nav aria-label="Profiles, footer">
+      <a href="https://github.com/shubham4413" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/shubham-nagar-5a8174184/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://huggingface.co/shubham4413" target="_blank" rel="noreferrer">Hugging Face</a>
+    </nav>
+    <p>2026</p>
+  </footer>
+  <script src="../main.js" defer></script>
+</body>
+</html>

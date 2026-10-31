@@ -3,302 +3,400 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio of Shubham Nagar, a robotics and machine learning engineer working across ROS 2, C++, robot learning, and industrial AI.">
-  <meta name="theme-color" content="#1638bf">
-  <title>Shubham Nagar | Robotics &amp; Machine Learning</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%232450de'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Georgia' font-size='28' fill='white'%3ESN%3C/text%3E%3C/svg%3E">
+  <title>Shubham Nagar, robot learning</title>
+  <meta name="description" content="Shubham Nagar, robot-learning engineer. Demonstration data, imitation-learning policies and real-robot evaluation on SO-101, KUKA iiwa and Kinova Gen3.">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="Shubham Nagar, robot-learning engineer">
+  <meta property="og:description" content="Demonstration data, imitation-learning policies and real-robot evaluation.">
+  <meta property="og:image" content="assets/frames/smolvla-018_0.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='14' y='26' width='36' height='12' fill='%23dedad3'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Shubham Nagar, home">
-      <span>SN</span>
-      <span class="wordmark-name">Shubham Nagar</span>
-    </a>
-
-    <nav aria-label="Primary navigation">
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#about">About</a>
-    </nav>
-
-    <a class="header-contact" href="mailto:shubham.nagar@rwth-aachen.de">Contact</a>
-  </header>
-
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-atmosphere" aria-hidden="true">
-        <span class="orb orb-one"></span>
-        <span class="orb orb-two"></span>
-        <span class="trajectory trajectory-one"></span>
-        <span class="trajectory trajectory-two"></span>
-      </div>
-      <div class="hero-copy">
-        <p class="eyebrow">Robotics · Machine Learning · Physical AI</p>
-        <h1 id="hero-title">I build learning systems that have to work in the <em>physical world.</em></h1>
-        <p class="hero-intro">
-          I am Shubham Nagar, an M.S. candidate at RWTH Aachen. I work from model training and C++ robotics software through to physical-arm integration and manufacturing processes.
-        </p>
-        <div class="hero-links" aria-label="Profile links">
-          <a href="https://github.com/shubham4413" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-          <a href="https://www.linkedin.com/in/shubham-nagar-5a8174184/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
-          <a href="mailto:shubham.nagar@rwth-aachen.de">Email <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
+      <header class="hero__top">
+        <a class="wordmark" href="#top">Shubham Nagar</a>
+        <nav class="hero__nav" aria-label="Sections">
+          <a class="link" href="#work">Work</a>
+          <a class="link" href="#results">Results</a>
+          <a class="link" href="#data">Data</a>
+          <a class="link" href="#about">About</a>
+        </nav>
+        <nav class="profiles" aria-label="Profiles">
+          <a class="link" href="https://github.com/shubham4413" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="link" href="https://www.linkedin.com/in/shubham-nagar-5a8174184/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="link" href="https://huggingface.co/shubham4413" target="_blank" rel="noreferrer">Hugging Face</a>
+        </nav>
+      </header>
 
-      <figure class="hero-figure">
-        <img src="assets/kuka_arm.jpeg" alt="KUKA iiwa robot in the WZL Smart Automation Lab" width="1200" height="1600">
-        <figcaption>
-          <span>Physical AI research · WZL, RWTH Aachen</span>
-          <span>Language plan → validation → ROS 2 execution</span>
-        </figcaption>
-      </figure>
-
-      <div class="hero-note">
-        <span>Based in Aachen, Germany</span>
-        <span>Available from January 2027</span>
-      </div>
-    </section>
-
-    <section class="statement" id="about" aria-labelledby="about-title">
-      <p class="section-label">01 / About</p>
-      <div>
-        <h2 id="about-title">Engineering with the full system in view.</h2>
-        <p>
-          My background combines mechanical engineering with robotics software and machine learning. I care about what happens when algorithms meet noisy sensors, constrained networks, contact, safety limits, and changing physical processes. That has led me from industrial product design to physical robot integration, adaptive SLAM, imitation learning, and quality optimization for manufacturing.
-        </p>
-      </div>
-    </section>
-
-    <section class="selected-work" id="work" aria-labelledby="work-title">
-      <div class="section-heading">
-        <p class="section-label">02 / Selected work</p>
-        <h2 id="work-title">Systems, experiments, and what they taught me.</h2>
-      </div>
-
-      <article class="project" id="erh-physical-ai">
-        <div class="project-meta">
-          <span>01</span>
-          <span>ERH Physical AI Hackathon · Team Trainers</span>
-          <span>October 17–18, 2026</span>
-          <span>2nd in track · Imagine, then Act</span>
-        </div>
-        <div class="project-copy">
-          <h3>ERH Hackathon: 2nd in track, Zurich</h3>
-          <p>
-            Our team, Trainers, placed second in the “Imagine, then Act” track at the 30-hour ERH Physical AI Hackathon, held October 17–18, 2026 at DARE campus in Zurich. We tested Black Forest Labs' FLUX.3 Action SO-101 world action model on a physical arm, with scene and wrist cameras and remote inference on AWS using an NVIDIA H100. Calibration issues limited the zero-shot results.
-          </p>
-          <p>
-            We collected 100 training episodes each for paper-cup stacking and placing Snickers bars on a plate, with other objects randomly scattered across the table. We fine-tuned on these 200 episodes at batch size 2 for 6,000 steps and compared the 3,000-, 4,000-, and 6,000-step checkpoints. The best checkpoint, at 6,000 steps, succeeded in 8 of 10 physical-robot Snickers-placement trials and 5 of 10 cup-stacking trials. The public dataset contains 300 episodes; the working model used the 200-episode training subset. The 20-second timelapse shows both tasks and camera views at approximately 5.2× speed.
-          </p>
-          <div class="project-links">
-            <a class="text-link" href="https://huggingface.co/datasets/shubham4413/erh_so101" target="_blank" rel="noreferrer">Dataset <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="https://huggingface.co/black-forest-labs/flux-3-action-so101" target="_blank" rel="noreferrer">Base model <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-        <div class="project-media">
-          <video controls muted playsinline preload="metadata" poster="assets/erh_physical_ai_poster.jpg" aria-label="Team Trainers' 20-second ERH timelapse: SO-101 chocolate placement and cup stacking, both camera views, approximately 5.2 times speed">
-            <source src="assets/erh_physical_ai_highlights.mp4" type="video/mp4">
-            Your browser does not support embedded video. <a href="assets/erh_physical_ai_highlights.mp4">Watch the 20-second ERH timelapse.</a>
-          </video>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-meta">
-          <span>02</span>
-          <span>SmolVLA · LeRobot · Physical robot</span>
-          <span>2026–present</span>
-          <span>75% full-stack success</span>
-        </div>
-        <div class="project-copy">
-          <h3>Physical SO-101 nut stacking with SmolVLA</h3>
-          <p>
-            I collected 80 additional physical demonstrations and aggregated them with the original 80 into a 160-episode LeRobot dataset with synchronized top-view and first-person video, robot state, and joint actions. I fine-tuned three SmolVLA policies on the first 80 episodes and evaluated them on the physical arm. The best configuration, batch size 16 at 20,000 steps, achieved 75% full-stack success, 88% pick-or-better, and 92% grasp-or-better.
-          </p>
-          <div class="project-links">
-            <a class="text-link" href="https://huggingface.co/datasets/shubham4413/so100_smolvla_rc" target="_blank" rel="noreferrer">Dataset <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="https://huggingface.co/shubham4413/so100_smolvla_bs16_20k_80ep" target="_blank" rel="noreferrer">Model <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-        <div class="project-media">
-          <video controls muted playsinline preload="metadata" aria-label="SmolVLA policy stacking nuts with a physical SO-101 robot arm">
-            <source src="assets/so101_smolvla_demo.mp4" type="video/mp4">
-            Your browser does not support embedded video.
-          </video>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-meta">
-          <span>03</span>
-          <span>Vision-language model · MCP · MoveIt 2</span>
-          <span>2026–present</span>
-          <span>Physical KUKA iiwa</span>
-        </div>
-        <div class="project-copy">
-          <h3>Vision-language task planning for KUKA disassembly</h3>
-          <p>
-            At WZL, I am developing a task-planning system in which an off-device vision-language model receives live world-state information as context and converts natural-language instructions into structured actions. The model calls a MoveIt 2 backend through a Model Context Protocol (MCP) server. A deterministic validation layer checks kinematic and safety bounds before the ROS 2 execution layer dispatches commands to the physical KUKA iiwa, and execution feedback returns success or failure to the planner for the next step.
-          </p>
-        </div>
-        <div class="project-media">
-          <video controls muted playsinline preload="metadata" aria-label="Vision-language task planning and execution on a physical KUKA iiwa robot">
-            <source src="assets/kuka_hiwi.MOV" type="video/quicktime">
-            Your browser does not support embedded video.
-          </video>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-meta">
-          <span>04</span>
-          <span>C++ · ROS 2 · SLAM</span>
-          <span>2025–present</span>
-          <span>+22.7% map accuracy</span>
-        </div>
-        <div class="project-copy">
-          <h3>Adaptive network-aware multi-robot graph SLAM</h3>
-          <p>
-            I built the C++ communication layer for decentralized multi-robot graph SLAM and tested it across two Linux/QEMU robot VMs with runtime bandwidth and latency shaping. The transmission policy adapts point-cloud fidelity to the available link budget, removing the original communication bottleneck and improving map accuracy by 22.7% under constrained links.
-          </p>
-          <a class="text-link" href="https://github.com/shubham4413/network_aware_mrg_slam" target="_blank" rel="noreferrer">View repository <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="project-media">
-          <video controls muted playsinline preload="metadata" aria-label="Demonstration of the network-aware multi-robot SLAM system">
-            <source src="assets/network_aware_slam.mp4" type="video/mp4">
-            Your browser does not support embedded video.
-          </video>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-meta">
-          <span>05</span>
-          <span>Robot learning · Simulation</span>
-          <span>2026–present</span>
-          <span>35th globally</span>
-        </div>
-        <div class="project-copy">
-          <h3>Imitation learning for contact-rich cable insertion</h3>
-          <p>
-            I developed an end-to-end ROS 2 and Gazebo pipeline from demonstration generation to policy evaluation. I trained ACT behavior-cloning and diffusion-policy models, then used a DAgger teacher-learner loop to collect corrections on states visited by the learned policy. Failure analysis showed how small pose errors compound during contact and how multimodal demonstrations can average into unusable trajectories.
-          </p>
-        </div>
-        <div class="project-media">
-          <video controls muted playsinline preload="metadata" aria-label="Simulation of robotic cable insertion from the Intrinsic AI for Industry Challenge">
-            <source src="assets/intrinsic_hackathon.mp4" type="video/mp4">
-            Your browser does not support embedded video.
-          </video>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-meta">
-          <span>06</span>
-          <span>ROS 2 · Gazebo · ACT · LeRobot</span>
-          <span>2026–present</span>
-          <span>100 simulation episodes</span>
-        </div>
-        <div class="project-copy">
-          <h3>SO-101 simulation and closed-loop ACT policy</h3>
-          <p>
-            I recreated the physical nut-stacking task in Gazebo and built a ROS 2 pipeline for inverse-kinematics-based grasping, lifting, and stacking demonstrations. A randomized headless collector generated 100 successful multi-camera episodes in LeRobot format with synchronized states and actions. I trained a 52M-parameter ACT policy from scratch on an RTX 4070 using pretrained ResNet-18 visual features, then connected it through a closed-loop inference bridge with synchronized camera feedback and safety-bounded joint commands. The policy achieved autonomous nut stacking in Gazebo; it has not been transferred to the physical arm.
-          </p>
-        </div>
-        <div class="project-media">
-          <video controls muted playsinline preload="metadata" aria-label="Autonomous SO-101 nut stacking with a closed-loop ACT policy in Gazebo">
-            <source src="assets/so101_act_gazebo_web.mp4" type="video/mp4">
-            Your browser does not support embedded video.
-          </video>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-meta">
-          <span>07</span>
-          <span>ROS 2 · MoveIt Servo · Teleoperation</span>
-          <span>2024–2025</span>
-          <span>Physical Kinova Gen3</span>
-        </div>
-        <div class="project-copy">
-          <h3>Hand-to-robot teleoperation of a Kinova Gen3</h3>
-          <p>
-            I built a Dockerized ROS 2 application for a physical 7-DoF Kinova Gen3 using MoveIt 2 and the Kinova ROS 2 drivers. A hand-held IMU supplied operator orientation, with rotation about each mapped axis converted into TCP velocity along the corresponding Cartesian direction through MoveIt Servo. The system also integrated a rotary encoder and IR safety sensors over Wi-Fi, with control-mode switching, emergency stop, and homing.
-          </p>
-          <a class="text-link" href="https://github.com/shubham4413/kortex_imu_moveit_servo_gen3" target="_blank" rel="noreferrer">View repository <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="project-media">
-          <video controls muted playsinline preload="metadata" aria-label="Hand-held sensor teleoperation of a physical Kinova Gen3 robot">
-            <source src="assets/kinova_teleop.mp4" type="video/mp4">
-            Your browser does not support embedded video.
-          </video>
-        </div>
-      </article>
-    </section>
-
-    <section class="experience" id="experience" aria-labelledby="experience-title">
-      <div class="section-heading">
-        <p class="section-label">03 / Experience</p>
-        <h2 id="experience-title">From mechanical systems to physical AI.</h2>
+      <div class="strip" data-strip>
+        <ul class="strip__track" data-strip-track>
+          <li class="strip__frame" data-caption="ERH Physical AI Hackathon, Zurich. 2nd in the Imagine, then Act track" data-clip="assets/clips/erh-scene.mp4">
+            <a href="#erh"><img src="assets/frames/erh-scene-002_5.webp" alt="SO-101 arm reaching for Snickers bars beside a plate, scene camera" width="960" height="720"></a>
+          </li>
+          <li class="strip__frame" data-caption="SmolVLA nut stacking on a physical SO-101. 75% full-stack success" data-clip="assets/clips/smolvla.mp4">
+            <a href="#smolvla"><img src="assets/frames/smolvla-018_0.webp" alt="SO-101 arm placing a red nut onto a stack under a SmolVLA policy" width="1272" height="720"></a>
+          </li>
+          <li class="strip__frame" data-caption="KUKA iiwa at WZL. Perception to MoveIt pick-and-place" data-clip="assets/clips/kuka.mp4">
+            <a href="#kuka"><img src="assets/frames/kuka-009_0.webp" alt="KUKA iiwa lowering its gripper into a disassembly fixture" width="1280" height="720"></a>
+          </li>
+          <li class="strip__frame" data-caption="ERH wrist camera. Snickers placement, 8 of 10 on the real arm">
+            <a href="#erh"><img src="assets/frames/erh-wrist-003_0.webp" alt="Wrist-camera view of the gripper holding a Snickers bar" width="960" height="720"></a>
+          </li>
+          <li class="strip__frame" data-caption="ACT policy in Gazebo. Autonomous nut stacking in simulation" data-clip="assets/clips/act.mp4">
+            <a href="#act"><img src="assets/frames/act-016_0.webp" alt="Simulated SO-101 stacking a red nut in Gazebo" width="566" height="720"></a>
+          </li>
+          <li class="strip__frame" data-caption="Kinova Gen3. Hand-held IMU teleoperation" data-clip="assets/clips/kinova.mp4">
+            <a href="#kinova"><img src="assets/frames/kinova-005_0.webp" alt="Shubham steering a Kinova Gen3 arm with a hand-held sensor" width="1280" height="720"></a>
+          </li>
+          <li class="strip__frame" data-caption="Intrinsic AI for Industry Challenge. Cable insertion, 35th globally" data-clip="assets/clips/intrinsic.mp4">
+            <a href="#intrinsic"><img src="assets/frames/intrinsic-010_0.webp" alt="Simulated gripper guiding an orange cable plug toward a port" width="676" height="720"></a>
+          </li>
+          <li class="strip__frame" data-caption="Multi-robot graph SLAM. +22.7% map accuracy on constrained links" data-clip="assets/clips/slam.mp4">
+            <a href="#slam"><img src="assets/frames/slam-015_0.webp" alt="Merged lidar map of a walled arena, coloured by height" width="630" height="720"></a>
+          </li>
+          <li class="strip__frame" data-caption="ERH scene camera. Paper-cup stacking, 5 of 10 on the real arm">
+            <a href="#erh"><img src="assets/frames/erh-scene-013_5.webp" alt="SO-101 arm stacking white paper cups" width="960" height="720"></a>
+          </li>
+          <li class="strip__frame" data-caption="KUKA iiwa. Validated object pose handed to a deterministic MoveIt skill">
+            <a href="#kuka"><img src="assets/frames/kuka-017_0.webp" alt="KUKA iiwa bent over the fixture during a pick" width="1280" height="720"></a>
+          </li>
+          <li class="strip__frame" data-caption="Gazebo bridge log. Every joint command passes a safety clamp">
+            <a href="#act"><img src="assets/frames/act-log-012_0.webp" alt="Terminal log from the ACT Gazebo bridge listing step, safety clamp and camera skew" width="630" height="300"></a>
+          </li>
+          <li class="strip__frame" data-caption="SmolVLA, best checkpoint. 92% of rollouts grasp the nut">
+            <a href="#smolvla"><img src="assets/frames/smolvla-037_0.webp" alt="SO-101 arm holding a nut above a two-nut stack" width="1272" height="720"></a>
+          </li>
+        </ul>
+        <p class="strip__caption" data-strip-caption aria-live="polite">ERH Physical AI Hackathon, Zurich. 2nd in the Imagine, then Act track</p>
       </div>
 
-      <div class="experience-list">
-        <article>
-          <div class="experience-when">2026–present</div>
-          <div class="experience-role">
-            <h3>Physical AI Research Assistant</h3>
-            <p>WZL Smart Automation Lab · RWTH Aachen</p>
-          </div>
-          <p class="experience-description">Language-conditioned task planning for a physical KUKA iiwa, with live world-state grounding, deterministic kinematic and safety validation, and ROS 2 execution feedback.</p>
-        </article>
-
-        <article>
-          <div class="experience-when">2025–present</div>
-          <div class="experience-role">
-            <h3>ML Developer &amp; Master’s Thesis</h3>
-            <p>MAGMA · RWTH Aachen</p>
-          </div>
-          <p class="experience-description">ML surrogate tooling and feedforward disturbance compensation to optimize injection-molded product quality under changing physical process conditions.</p>
-        </article>
-
-        <article>
-          <div class="experience-when">2021–2024</div>
-          <div class="experience-role">
-            <h3>Design Engineer</h3>
-            <p>Dover India · Bangalore</p>
-          </div>
-          <p class="experience-description">Pneumatic valve design, manufacturing drawings with advanced GD&amp;T, PLM release management, and new-product-development support.</p>
-        </article>
+      <div class="hero__foot">
+        <div class="hero__intro">
+          <h1 id="hero-title">Shubham Nagar, robot learning</h1>
+          <p>I record the demonstrations, train the policy and test it on the real arm.</p>
+        </div>
+        <div class="hero__actions">
+          <a class="button" href="mailto:shubham.nagar@rwth-aachen.de">Email me</a>
+          <a class="link link-plain" href="#work">See the work</a>
+        </div>
       </div>
     </section>
 
-    <section class="capabilities" aria-labelledby="capabilities-title">
-      <p class="section-label">04 / Toolkit</p>
-      <div>
-        <h2 id="capabilities-title">Tools I use to move between model, system, and machine.</h2>
-        <p class="tool-list">Python, C++, ROS 2, PyTorch, MoveIt 2, Gazebo, Isaac Sim, LeRobot, OpenCV, Docker, Linux, GitLab CI, Hugging Face, JAX, scikit-learn</p>
+    <section class="work" id="work" aria-labelledby="work-title">
+      <h2 class="work__title" id="work-title" data-reveal>Seven robot projects</h2>
+
+      <article class="project" id="erh" aria-labelledby="erh-title">
+        <ul class="reel" data-reel>
+          <li><img src="assets/frames/erh-wrist-003_0.webp" alt="Wrist camera: gripper closing on a Snickers bar" width="960" height="720" loading="lazy"></li>
+          <li class="reel__clip">
+            <video data-loop muted loop playsinline preload="none" class="is-composite" poster="assets/clips/erh.webp" width="1280" height="720" aria-label="Team Trainers' timelapse of SO-101 Snickers placement and cup stacking, scene and wrist cameras">
+              <source src="assets/clips/erh.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li><img src="assets/frames/erh-scene-006_0.webp" alt="SO-101 placing a Snickers bar on the plate" width="960" height="720" loading="lazy"></li>
+          <li><img src="assets/frames/erh-scene-016_5.webp" alt="SO-101 lifting a paper cup" width="960" height="720" loading="lazy"></li>
+          <li><img src="assets/frames/erh-wrist-017_0.webp" alt="Wrist camera: gripper next to a paper cup" width="960" height="720" loading="lazy"></li>
+        </ul>
+        <div class="facts" data-reveal>
+          <div class="facts__name"><h3 id="erh-title">ERH Physical AI Hackathon, Zurich</h3><p>FLUX.3 Action on SO-101</p></div>
+          <p class="facts__result">2nd in the Imagine, then Act track</p>
+          <p class="facts__year">October 2026</p>
+          <p class="facts__stack">Team Trainers, 30 hours at DARE campus</p>
+        </div>
+        <div class="project__body" data-reveal>
+          <p>We tested Black Forest Labs' FLUX.3 Action world action model zero-shot on a physical SO-101 with a scene camera and a wrist camera, running inference remotely on an NVIDIA H100 through AWS. Calibration issues limited the zero-shot runs. We then collected 100 episodes each of Snickers placement and paper-cup stacking, with other objects scattered on the table, and fine-tuned at batch size 2.</p>
+          <p>Of the 3,000-, 4,000- and 6,000-step checkpoints, 6,000 steps worked best: 8 of 10 Snickers placements and 5 of 10 cup stacks on the real arm, scored as separate tasks.</p>
+          <ul class="project__links">
+            <li><a class="link-plain" href="work/erh.html">Project page</a></li>
+            <li><a class="link-plain" href="https://huggingface.co/datasets/shubham4413/erh_so101" target="_blank" rel="noreferrer">Dataset</a></li>
+            <li><a class="link-plain" href="https://huggingface.co/black-forest-labs/flux-3-action-so101" target="_blank" rel="noreferrer">Base model</a></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project" id="smolvla" aria-labelledby="smolvla-title">
+        <ul class="reel" data-reel>
+          <li><img src="assets/frames/smolvla-001_0.webp" alt="The SO-101 setup: two red nuts, the arm and the laptop running the policy" width="1272" height="720" loading="lazy"></li>
+          <li class="reel__clip">
+            <video data-loop muted loop playsinline preload="none" poster="assets/clips/smolvla.webp" width="960" height="544" aria-label="SmolVLA policy stacking nuts with a physical SO-101 arm">
+              <source src="assets/clips/smolvla.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li><img src="assets/frames/smolvla-024_0.webp" alt="SO-101 lowering a nut onto the stack" width="1272" height="720" loading="lazy"></li>
+          <li><img src="assets/frames/smolvla-043_0.webp" alt="SO-101 releasing a nut on top of the stack" width="1272" height="720" loading="lazy"></li>
+          <li><img src="assets/frames/smolvla-012_0.webp" alt="SO-101 arm beside two red nuts before a rollout" width="1272" height="720" loading="lazy"></li>
+        </ul>
+        <div class="facts" data-reveal>
+          <div class="facts__name"><h3 id="smolvla-title">SmolVLA nut stacking</h3><p>Physical SO-101, public dataset</p></div>
+          <p class="facts__result">75% full-stack success</p>
+          <p class="facts__year">2026</p>
+          <p class="facts__stack">LeRobot, SmolVLA</p>
+        </div>
+        <div class="project__body project__body--split">
+          <div data-reveal>
+            <p>I recorded 80 more leader-follower demonstrations and merged them with the original 80 into a public 160-episode, 77,104-frame dataset with a top camera, a first-person camera, and 6-DoF state and action.</p>
+            <p>I fine-tuned three SmolVLA policies on the first 80 episodes and scored every real-arm rollout by how far it got: grasp, pick, full stack. Batch size 64 at 20,000 steps picked the nut in 90% of rollouts and finished no stacks.</p>
+            <ul class="project__links">
+              <li><a class="link-plain" href="work/smolvla.html">Project page</a></li>
+              <li><a class="link-plain" href="https://huggingface.co/datasets/shubham4413/so100_smolvla_rc" target="_blank" rel="noreferrer">Dataset</a></li>
+              <li><a class="link-plain" href="https://huggingface.co/shubham4413/so100_smolvla_bs16_20k_80ep" target="_blank" rel="noreferrer">Best checkpoint</a></li>
+            </ul>
+          </div>
+          <figure class="ckpt" data-ckpt data-reveal>
+            <figcaption class="ckpt__title">Three checkpoints on the real arm</figcaption>
+            <div class="ckpt__switch" role="group" aria-label="Checkpoint">
+              <button type="button" aria-pressed="true" data-ckpt-key="0">Batch 16, 20k steps</button>
+              <button type="button" aria-pressed="false" data-ckpt-key="1">Batch 64, 10k steps</button>
+              <button type="button" aria-pressed="false" data-ckpt-key="2">Batch 64, 20k steps</button>
+            </div>
+            <div class="ckpt__bars" aria-hidden="true">
+              <div class="ckpt__row"><span>Grasp or better</span><div class="ckpt__track"><i data-bar="0"></i></div><b data-val="0">92%</b></div>
+              <div class="ckpt__row"><span>Pick or better</span><div class="ckpt__track"><i data-bar="1"></i></div><b data-val="1">88%</b></div>
+              <div class="ckpt__row"><span>Full stack</span><div class="ckpt__track"><i data-bar="2"></i></div><b data-val="2">75%</b></div>
+            </div>
+            <p class="ckpt__note" data-ckpt-note aria-live="polite"></p>
+            <table class="ckpt__table">
+              <caption class="sr-only">Share of physical rollouts reaching each stage, by checkpoint</caption>
+              <thead><tr><th scope="col">Checkpoint</th><th scope="col">Grasp or better</th><th scope="col">Pick or better</th><th scope="col">Full stack</th></tr></thead>
+              <tbody>
+                <tr data-ckpt-row><th scope="row">Batch 16, 20k steps</th><td>92%</td><td>88%</td><td>75%</td></tr>
+                <tr data-ckpt-row><th scope="row">Batch 64, 10k steps</th><td>55%</td><td>52%</td><td>40%</td></tr>
+                <tr data-ckpt-row><th scope="row">Batch 64, 20k steps</th><td>90%</td><td>90%</td><td>0%</td></tr>
+              </tbody>
+            </table>
+          </figure>
+        </div>
+      </article>
+
+      <article class="project" id="kuka" aria-labelledby="kuka-title">
+        <ul class="reel" data-reel>
+          <li><img src="assets/frames/kuka-001_0.webp" alt="KUKA iiwa above the disassembly fixture" width="1280" height="720" loading="lazy"></li>
+          <li class="reel__clip">
+            <video data-loop muted loop playsinline preload="none" poster="assets/clips/kuka.webp" width="1280" height="720" aria-label="KUKA iiwa running a pick in the WZL disassembly cell">
+              <source src="assets/clips/kuka.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li><img src="assets/frames/kuka-013_0.webp" alt="KUKA iiwa reaching into the fixture" width="1280" height="720" loading="lazy"></li>
+          <li><img src="assets/frames/kuka-022_0.webp" alt="KUKA iiwa close to the fixture with the teach pendant in front" width="1280" height="720" loading="lazy"></li>
+        </ul>
+        <div class="facts" data-reveal>
+          <div class="facts__name"><h3 id="kuka-title">Perception to pick on a KUKA iiwa</h3><p>WZL Smart Automation Lab, RWTH</p></div>
+          <p class="facts__result">Six stages, each tested on hardware</p>
+          <p class="facts__year">2026 to present</p>
+          <p class="facts__stack">YOLOE, RealSense, MoveIt 2, Jetson AGX Orin</p>
+        </div>
+        <div class="project__body" data-reveal>
+          <p>For an LLM task planner in a disassembly cell, I built the path from camera to gripper. Pretrained YOLOE-26s-seg detects and segments the requested object in RealSense images, the calibrated camera-to-robot transform puts it in the iiwa base frame, and validated poses go to deterministic MoveIt skills: approach, grasp, lift, place, release, retreat. The gripper runs over OPC UA.</p>
+          <p>A hard-coded layer checks kinematic and safety bounds before any action is dispatched. The LLM planner and the ROS 2 execution layer run on an NVIDIA Jetson AGX Orin.</p>
+          <ul class="project__links">
+            <li><a class="link-plain" href="work/kuka.html">Project page</a></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project project--minor" id="act" aria-labelledby="act-title">
+        <ul class="reel" data-reel>
+          <li><img src="assets/frames/act-004_0.webp" alt="Simulated SO-101 reaching toward two red nuts" width="566" height="720" loading="lazy"></li>
+          <li class="reel__clip">
+            <video data-loop muted loop playsinline preload="none" poster="assets/clips/act.webp" width="566" height="720" aria-label="ACT policy stacking nuts on a simulated SO-101 in Gazebo">
+              <source src="assets/clips/act.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li><img src="assets/frames/act-log-012_0.webp" alt="Bridge log listing step, safety clamp and camera skew per command" width="630" height="300" loading="lazy"></li>
+          <li><img src="assets/frames/act-022_0.webp" alt="Simulated SO-101 lowering a nut" width="566" height="720" loading="lazy"></li>
+          <li><img src="assets/frames/act-028_0.webp" alt="Simulated SO-101 above the finished stack" width="566" height="720" loading="lazy"></li>
+        </ul>
+        <div class="facts" data-reveal>
+          <div class="facts__name"><h3 id="act-title">ACT policy for SO-101 in Gazebo</h3><p>Matched simulation of the physical task</p></div>
+          <p class="facts__result">Autonomous stacking, in simulation</p>
+          <p class="facts__year">2026</p>
+          <p class="facts__stack">ROS 2, Gazebo, ACT, LeRobot</p>
+        </div>
+        <div class="project__body" data-reveal>
+          <p>I rebuilt the physical nut-stacking task in Gazebo and wrote a randomized, headless collector that produced 100 successful multi-camera episodes in LeRobot format. A 52M-parameter Action Chunking with Transformers (ACT) policy, trained from scratch on an RTX 4070 with pretrained ResNet-18 features, runs closed-loop through a bridge that synchronizes camera frames and bounds every joint command.</p>
+          <p>It stacks autonomously in simulation. It has not been run on the physical arm yet.</p>
+        </div>
+      </article>
+
+      <article class="project project--minor" id="intrinsic" aria-labelledby="intrinsic-title">
+        <ul class="reel" data-reel>
+          <li><img src="assets/frames/intrinsic-002_0.webp" alt="Simulated arm holding a cable above the insertion fixture" width="676" height="720" loading="lazy"></li>
+          <li class="reel__clip">
+            <video data-loop muted loop playsinline preload="none" poster="assets/clips/intrinsic.webp" width="676" height="720" aria-label="Simulated cable insertion from the Intrinsic AI for Industry Challenge">
+              <source src="assets/clips/intrinsic.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li><img src="assets/frames/intrinsic-014_0.webp" alt="Gripper aligning the plug with the port" width="676" height="720" loading="lazy"></li>
+          <li><img src="assets/frames/intrinsic-018_0.webp" alt="Gripper pressing the plug toward the port" width="676" height="720" loading="lazy"></li>
+        </ul>
+        <div class="facts" data-reveal>
+          <div class="facts__name"><h3 id="intrinsic-title">Cable insertion, Intrinsic challenge</h3><p>Intrinsic AI for Industry Challenge</p></div>
+          <p class="facts__result">35th globally</p>
+          <p class="facts__year">2026</p>
+          <p class="facts__stack">ROS 2, Gazebo, ACT, diffusion policy, DAgger</p>
+        </div>
+        <div class="project__body" data-reveal>
+          <p>I tuned controllers and spawn randomization to generate clean synthetic demonstrations in Gazebo, then trained ACT and diffusion-policy models with a DAgger teacher-learner loop.</p>
+          <p>Two failures shaped the work: small pose errors compounded once the plug made contact, and multimodal demonstrations averaged into unusable trajectories.</p>
+        </div>
+      </article>
+
+      <article class="project project--minor" id="slam" aria-labelledby="slam-title">
+        <ul class="reel" data-reel>
+          <li><img src="assets/frames/slam-world-010_0.webp" alt="Gazebo arena with walls and obstacles for two robots" width="790" height="720" loading="lazy"></li>
+          <li class="reel__clip">
+            <video data-loop muted loop playsinline preload="none" poster="assets/clips/slam.webp" width="630" height="720" aria-label="Merged multi-robot lidar map building up under a constrained link">
+              <source src="assets/clips/slam.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li><img src="assets/frames/slam-gui-020_0.webp" alt="Monitoring panel showing bandwidth, latency and data saved per robot" width="1380" height="290" loading="lazy"></li>
+          <li><img src="assets/frames/slam-025_0.webp" alt="Completed merged lidar map" width="630" height="720" loading="lazy"></li>
+        </ul>
+        <div class="facts" data-reveal>
+          <div class="facts__name"><h3 id="slam-title">Network-aware multi-robot SLAM</h3><p>MMI, RWTH Aachen</p></div>
+          <p class="facts__result">+22.7% map accuracy on constrained links</p>
+          <p class="facts__year">2025 to present</p>
+          <p class="facts__stack">C++, ROS 2, QEMU, PyQt</p>
+        </div>
+        <div class="project__body" data-reveal>
+          <p>I wrote the C++ communication layer that adapts VoxelGrid point-cloud transmission to the available link, and tested it on two robot VMs under QEMU with TAP networking and bandwidth and latency shaped at runtime. It removed the communication bottleneck of decentralized multi-robot graph SLAM. A PyQt monitor shows bandwidth, latency and data saved for each robot.</p>
+          <ul class="project__links">
+            <li><a class="link-plain" href="https://github.com/shubham4413/network_aware_mrg_slam" target="_blank" rel="noreferrer">Repository</a></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project project--minor" id="kinova" aria-labelledby="kinova-title">
+        <ul class="reel" data-reel>
+          <li><img src="assets/frames/kinova-001_0.webp" alt="Operator seated beside a Kinova Gen3 arm" width="1280" height="720" loading="lazy"></li>
+          <li class="reel__clip">
+            <video data-loop muted loop playsinline preload="none" poster="assets/clips/kinova.webp" width="960" height="540" aria-label="Hand-held sensor teleoperation of a physical Kinova Gen3">
+              <source src="assets/clips/kinova.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li><img src="assets/frames/kinova-013_0.webp" alt="Operator rotating the hand-held sensor while the arm follows" width="1280" height="720" loading="lazy"></li>
+          <li><img src="assets/frames/kinova-017_0.webp" alt="Kinova gripper over the table with the control laptop in front" width="1280" height="720" loading="lazy"></li>
+        </ul>
+        <div class="facts" data-reveal>
+          <div class="facts__name"><h3 id="kinova-title">IMU teleoperation, Kinova Gen3</h3><p>WZL, RWTH Aachen</p></div>
+          <p class="facts__result">Physical 7-DoF arm</p>
+          <p class="facts__year">2024 to 2025</p>
+          <p class="facts__stack">ROS 2, MoveIt Servo, Docker</p>
+        </div>
+        <div class="project__body" data-reveal>
+          <p>Rotating a hand-held IMU maps, axis by axis, to end-effector velocity through MoveIt Servo on the Kinova ROS 2 drivers. A rotary encoder and IR safety sensors join over Wi-Fi, with control-mode switching, an emergency stop and homing, in one Dockerized stack that runs the same in simulation and on the arm.</p>
+          <ul class="project__links">
+            <li><a class="link-plain" href="https://github.com/shubham4413/kortex_imu_moveit_servo_gen3" target="_blank" rel="noreferrer">Repository</a></li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="results" id="results" aria-labelledby="results-title">
+      <h2 class="results__title" id="results-title" data-reveal><span>Measured</span> <span>results</span></h2>
+      <div class="results__wrap" data-reveal>
+        <table class="results__table">
+          <caption class="sr-only">Results by project</caption>
+          <thead>
+            <tr><th scope="col">Year</th><th scope="col">Project</th><th scope="col">Measure</th><th scope="col">Result</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2026</td><td>ERH Physical AI Hackathon, Zurich</td><td>Imagine, then Act track</td><td>2nd place</td></tr>
+            <tr><td></td><td>ERH, 6,000-step checkpoint</td><td>Snickers placement, physical SO-101</td><td>8 of 10</td></tr>
+            <tr><td></td><td>ERH, 6,000-step checkpoint</td><td>Paper-cup stacking, physical SO-101</td><td>5 of 10</td></tr>
+            <tr><td></td><td>SmolVLA, batch 16, 20k steps</td><td>Full stack, physical SO-101</td><td>75%</td></tr>
+            <tr><td></td><td>SmolVLA, batch 16, 20k steps</td><td>Pick or better</td><td>88%</td></tr>
+            <tr><td></td><td>SmolVLA, batch 16, 20k steps</td><td>Grasp or better</td><td>92%</td></tr>
+            <tr><td></td><td>ACT, 52M parameters</td><td>Nut stacking in Gazebo</td><td>Autonomous, simulation only</td></tr>
+            <tr><td></td><td>Intrinsic AI for Industry Challenge</td><td>Global ranking</td><td>35th</td></tr>
+            <tr class="results__gap" aria-hidden="true"><td colspan="4"></td></tr>
+            <tr><td>2025</td><td>Network-aware graph SLAM</td><td>Map accuracy on constrained links</td><td>+22.7%</td></tr>
+            <tr><td></td><td>Master's thesis, MAGMA</td><td>Multi-task GP surrogate, R²</td><td>≈ 0.99</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="contact" aria-labelledby="contact-title">
-      <p class="section-label">05 / Contact</p>
-      <div>
-        <h2 id="contact-title">Let’s build something that has to work in the real world.</h2>
-        <a href="mailto:shubham.nagar@rwth-aachen.de">shubham.nagar@rwth-aachen.de <span aria-hidden="true">↗</span></a>
+    <section class="data" id="data" aria-labelledby="data-title">
+      <div class="data__col">
+        <div class="data__head" data-reveal>
+          <h2 id="data-title">Data and models</h2>
+          <a class="link-plain" href="https://huggingface.co/shubham4413" target="_blank" rel="noreferrer">Hugging Face profile</a>
+        </div>
+        <p class="data__group">Datasets</p>
+        <ul class="rows" data-reveal>
+          <li><a href="https://huggingface.co/datasets/shubham4413/so100_smolvla_rc" target="_blank" rel="noreferrer"><span class="dot"></span>so100_smolvla_rc</a><span class="nums">160 episodes, 77,104 frames</span></li>
+          <li><a href="https://huggingface.co/datasets/shubham4413/erh_so101" target="_blank" rel="noreferrer"><span class="dot"></span>erh_so101, Team Trainers</a><span class="nums">300 episodes, 255,518 frames</span></li>
+        </ul>
+        <p class="data__group">Models</p>
+        <ul class="rows" data-reveal>
+          <li><a href="https://huggingface.co/shubham4413/so100_smolvla_bs16_20k_80ep" target="_blank" rel="noreferrer"><span class="dot"></span>so100_smolvla_bs16_20k_80ep</a><span class="nums">SmolVLA, 75% full stack</span></li>
+        </ul>
+        <p class="data__group">Code</p>
+        <ul class="rows" data-reveal>
+          <li><a href="https://github.com/shubham4413/network_aware_mrg_slam" target="_blank" rel="noreferrer"><span class="dot dot--ink"></span>network_aware_mrg_slam</a><span>C++, ROS 2</span></li>
+          <li><a href="https://github.com/shubham4413/kortex_imu_moveit_servo_gen3" target="_blank" rel="noreferrer"><span class="dot dot--ink"></span>kortex_imu_moveit_servo_gen3</a><span>ROS 2, MoveIt Servo</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about__row">
+        <dl class="about__facts" data-reveal>
+          <div><dt>Based in</dt><dd>Aachen, Germany</dd></div>
+          <div><dt>Studying</dt><dd>MSc Robotic Systems Engineering, RWTH Aachen, GPA 1.7</dd></div>
+          <div><dt>Available</dt><dd>Full-time from November 2026, valid German work visa</dd></div>
+          <div><dt>Languages</dt><dd>English C1, German A2</dd></div>
+        </dl>
+        <div class="about__text" data-reveal>
+          <h2 id="about-title">From valves to policies</h2>
+          <p>I started as a mechanical engineer: three years at Dover in Bangalore designing pneumatic valves, from 3D CAD and GD&amp;T drawings to PLM release. At RWTH I moved into robot software and learning.</p>
+          <p>My master's thesis at MAGMA keeps injection-molded product quality on target under physical process disturbances. It estimates melt viscosity from filling-phase pressure curves and picks the holding pressure by contextual inverse optimization over a multi-task Gaussian-process surrogate. As a research assistant there, I built and shipped a Dash application for training, inspecting and serving surrogate models, containerized with a GitLab CI pipeline and deployed across the company.</p>
+          <p>Day to day I use Python, C++, PyTorch, LeRobot, ROS 2, MoveIt 2, Gazebo, Isaac Sim, OpenCV, Docker and Linux.</p>
+        </div>
+      </div>
+      <div class="about__row">
+        <p class="about__label">Experience</p>
+        <ul class="rows rows--wide" data-reveal>
+          <li><span><b>Physical AI Research Assistant</b>, WZL Smart Automation Lab, RWTH</span><span class="nums">2026 to present</span></li>
+          <li><span><b>ML Developer and Master's Thesis</b>, MAGMA</span><span class="nums">2025 to present</span></li>
+          <li><span><b>Design Engineer</b>, Dover India, Bangalore</span><span class="nums">2021 to 2024</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <p class="contact__sentence" data-reveal>Open to full-time robot-learning roles from November 2026.</p>
+      <img class="contact__portrait" src="assets/portrait.webp" alt="Portrait of Shubham Nagar" width="360" height="360" loading="lazy">
+      <div class="contact__links" data-reveal>
+        <h2 id="contact-title">Hiring for robot learning?</h2>
+        <a class="link-plain" href="mailto:shubham.nagar@rwth-aachen.de">shubham.nagar@rwth-aachen.de</a>
+        <a class="link-plain" href="https://www.linkedin.com/in/shubham-nagar-5a8174184/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="link-plain" href="https://huggingface.co/shubham4413" target="_blank" rel="noreferrer">Hugging Face</a>
+        <p>Aachen, Germany</p>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>Shubham Nagar · Aachen, Germany</p>
-    <p>Robotics &amp; machine learning portfolio · 2026</p>
+  <footer class="foot">
+    <p>Shubham Nagar, robot learning</p>
+    <nav aria-label="Profiles, footer">
+      <a href="https://github.com/shubham4413" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/shubham-nagar-5a8174184/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://huggingface.co/shubham4413" target="_blank" rel="noreferrer">Hugging Face</a>
+    </nav>
+    <p>2026</p>
   </footer>
+
+  <script src="main.js" defer></script>
 </body>
 </html>

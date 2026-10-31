@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KUKA perception to pick, Shubham Nagar</title>
+  <meta name="description" content="Perception and manipulation for an LLM task planner on a KUKA iiwa at the WZL Smart Automation Lab: YOLOE-26s-seg, RealSense, MoveIt and OPC UA, with kinematic and safety validation.">
+  <meta name="theme-color" content="#dedad3">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Crect x='14' y='26' width='36' height='12' fill='%23dedad3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="page-top">
+    <a class="wordmark link" href="../index.html#kuka">Shubham Nagar</a>
+    <nav class="profiles" aria-label="Profiles">
+      <a class="link" href="https://github.com/shubham4413" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="link" href="https://www.linkedin.com/in/shubham-nagar-5a8174184/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="link" href="https://huggingface.co/shubham4413" target="_blank" rel="noreferrer">Hugging Face</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <h1 id="page-title">Perception to pick on a KUKA iiwa</h1>
+      <p>At the WZL Smart Automation Lab, I built and tested the path from a RealSense image to a gripper action, for an LLM task planner in a disassembly cell.</p>
+      <dl>
+        <div><dt>Lab</dt><dd>WZL Smart Automation Lab, RWTH Aachen</dd></div>
+        <div><dt>Role</dt><dd>Physical AI Research Assistant, 2026 to present</dd></div>
+        <div><dt>Hardware</dt><dd>KUKA iiwa, RealSense camera, NVIDIA Jetson AGX Orin</dd></div>
+      </dl>
+    </section>
+
+    <figure class="page-media">
+      <video data-loop muted loop playsinline preload="none" poster="../assets/clips/kuka.webp" width="1280" height="720" aria-label="KUKA iiwa working in the WZL disassembly cell">
+        <source src="../assets/clips/kuka.mp4" type="video/mp4">
+      </video>
+      <figcaption>The KUKA iiwa in the WZL disassembly cell.</figcaption>
+    </figure>
+
+    <section class="chapter chapter--dark" aria-labelledby="pipeline-title">
+      <h2 id="pipeline-title">Six stages, each tested on the hardware</h2>
+      <div data-reveal>
+        <ol class="stages">
+          <li><b>Detect</b><span>YOLOE-26s-seg with pretrained weights finds the requested object</span></li>
+          <li><b>Segment</b><span>The same model returns its mask</span></li>
+          <li><b>Localize</b><span>RealSense input gives the object's 3D position</span></li>
+          <li><b>Transform</b><span>The calibrated camera-to-robot transform moves it into the iiwa base frame</span></li>
+          <li><b>Move</b><span>Deterministic MoveIt skills: approach, grasp, lift, move to place, release, retreat</span></li>
+          <li><b>Grip</b><span>Gripper control over OPC UA</span></li>
+        </ol>
+        <p class="table-note">Validated object poses are handed to the MoveIt skills. The planner is meant to call high-level functions such as detect_object(), segment_object() and localize_object() rather than see camera images or YOLO internals.</p>
+      </div>
+    </section>
+
+    <section class="chapter" aria-labelledby="planning-title">
+      <h2 id="planning-title">Planning and safety</h2>
+      <p data-reveal>The planner turns natural-language instructions into structured actions from an action and parameter library, grounded by retrieval in the live world state. Before anything is dispatched, a hard-coded validation layer checks each action against kinematic and safety bounds. The ROS 2 execution layer returns success or failure to the planner for the next step.</p>
+      <p data-reveal>The local LLM planner and the ROS 2 execution layer run on an NVIDIA Jetson AGX Orin.</p>
+    </section>
+
+    <ul class="reel page-reel" data-reel aria-label="Frames from the cell">
+      <li><img src="../assets/frames/kuka-001_0.webp" alt="KUKA iiwa above the disassembly fixture" width="1280" height="720" loading="lazy"></li>
+      <li class="reel__clip"><img src="../assets/frames/kuka-009_0.webp" alt="KUKA iiwa lowering its gripper into the fixture" width="1280" height="720" loading="lazy"></li>
+      <li><img src="../assets/frames/kuka-017_0.webp" alt="KUKA iiwa bent over the fixture" width="1280" height="720" loading="lazy"></li>
+      <li><img src="../assets/frames/kuka-022_0.webp" alt="KUKA iiwa next to the teach pendant" width="1280" height="720" loading="lazy"></li>
+    </ul>
+
+    <section class="chapter" aria-labelledby="scope-title">
+      <h2 id="scope-title">Scope</h2>
+      <ul class="failures" data-reveal>
+        <li><b>Model</b>The detector uses pretrained YOLOE-26s-seg weights. It was not trained or fine-tuned here.</li>
+        <li><b>Testing</b>Detection, segmentation, RealSense localization, frame transformation, gripper control and the MoveIt pick-and-place skills were each tested on the hardware.</li>
+        <li><b>Edge compute</b>Latency and compute on the Jetson have not been measured yet.</li>
+      </ul>
+    </section>
+
+    <nav class="page-next" aria-label="Next project">
+      <a class="big" href="erh.html">Next: ERH Physical AI Hackathon</a>
+      <a class="link-plain" href="../index.html#work">All projects</a>
+    </nav>
+  </main>
+
+  <footer class="foot">
+    <p>Shubham Nagar, robot learning</p>
+    <nav aria-label="Profiles, footer">
+      <a href="https://github.com/shubham4413" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/shubham-nagar-5a8174184/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://huggingface.co/shubham4413" target="_blank" rel="noreferrer">Hugging Face</a>
+    </nav>
+    <p>2026</p>
+  </footer>
+  <script src="../main.js" defer></script>
+</body>
+</html>
