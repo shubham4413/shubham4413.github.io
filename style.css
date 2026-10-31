@@ -115,6 +115,9 @@ p + p { margin-top: 0.9em; }
 .project__body > .project__links { grid-column: 10 / 13; grid-row: 2; align-self: start; }
 .project__body > p:only-of-type + .project__links { grid-row: 1; margin-top: 0.2rem; }
 .project__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; margin-top: 1.5rem; font-weight: 500; }
+.project__body--two > p:first-child { grid-column: 4 / 8; }
+.project__body--two > p + p { grid-column: 9 / 13; }
+.project__body--two > .project__links { grid-column: 9 / 13; }
 .project__body--split > div:first-child { grid-column: 4 / 8; }
 .project__body--split > .ckpt { grid-column: 9 / 13; }
 

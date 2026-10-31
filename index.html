@@ -274,13 +274,13 @@
         </ul>
         <div class="facts" data-reveal>
           <div class="facts__name"><h3 id="intrinsic-title">Cable insertion, Intrinsic challenge</h3><p>Intrinsic AI for Industry Challenge</p></div>
-          <p class="facts__result">35th globally</p>
+          <p class="facts__result">35th globally, cable inserted in simulation</p>
           <p class="facts__year">2026</p>
           <p class="facts__stack">ROS 2, Gazebo, ACT, diffusion policy, DAgger</p>
         </div>
-        <div class="project__body" data-reveal>
-          <p>I tuned controllers and spawn randomization to generate clean synthetic demonstrations in Gazebo, then trained ACT and diffusion-policy models with a DAgger teacher-learner loop.</p>
-          <p>Two failures shaped the work: small pose errors compounded once the plug made contact, and multimodal demonstrations averaged into unusable trajectories.</p>
+        <div class="project__body project__body--two" data-reveal>
+          <p>The task: a robot arm in Gazebo holds a cable and has to insert its plug into a port, with the start positions randomized every episode. We tuned controllers to generate clean synthetic demonstrations and trained Action Chunking with Transformers (ACT) and diffusion-policy models on them. We then used DAgger to collect more data: the learned policy drives the arm, and a teacher labels the correct action for the states the policy actually reaches. A diffusion policy trained on that data plugged the cable into the port in simulation.</p>
+          <p>Two failures shaped the approach. The first was compounding error: a policy trained only on clean demonstrations has never seen a slightly wrong state, so once the plug touched the port, a small pose error pushed it somewhere unfamiliar and every further step drifted more. DAgger targets this by adding teacher labels for exactly those states. The second was averaging: the demonstrations reached the port in more than one way, and a model that predicts one average motion blends them into a path that matches none of them. A diffusion policy samples one of the ways instead of averaging them.</p>
         </div>
       </article>
 
@@ -301,8 +301,9 @@
           <p class="facts__year">November 2025 to May 2026</p>
           <p class="facts__stack">C++, ROS 2, QEMU, PyQt</p>
         </div>
-        <div class="project__body" data-reveal>
-          <p>I wrote the C++ communication layer that adapts VoxelGrid point-cloud transmission to the available link, and tested it on two robot VMs under QEMU with TAP networking and bandwidth and latency shaped at runtime. It removed the communication bottleneck of decentralized multi-robot graph SLAM. A PyQt monitor shows bandwidth, latency and data saved for each robot.</p>
+        <div class="project__body project__body--two" data-reveal>
+          <p>I wrote the C++ communication layer for decentralized multi-robot graph SLAM. It reads the current bandwidth and latency of the link between robots and sets the VoxelGrid resolution from them, so the raw lidar point clouds are downsampled more when the network is constrained and sent closer to full resolution when it is not.</p>
+          <p>I tested it on two robot VMs under QEMU with TAP networking, shaping bandwidth and latency at runtime. It removed the communication bottleneck and improved map accuracy by 22.7% on constrained links. A PyQt monitor shows the link state, the voxel size in use and the data saved for each robot.</p>
           <ul class="project__links">
             <li><a class="link-plain" href="https://github.com/shubham4413/network_aware_mrg_slam" target="_blank" rel="noreferrer">Repository</a></li>
             <li><a class="link-plain" href="assets/clips/slam-full.mp4" target="_blank" rel="noreferrer">Full recording</a></li>
@@ -353,6 +354,7 @@
             <tr><td></td><td>SmolVLA, batch 16, 20k steps</td><td>Grasp or better</td><td>92%</td></tr>
             <tr><td></td><td>ACT, 52M parameters</td><td>Nut stacking in Gazebo</td><td>Autonomous, simulation only</td></tr>
             <tr><td></td><td>Intrinsic AI for Industry Challenge</td><td>Global ranking</td><td>35th</td></tr>
+            <tr><td></td><td>Intrinsic, diffusion policy with DAgger data</td><td>Cable insertion in Gazebo</td><td>Inserted, simulation only</td></tr>
             <tr><td></td><td>Network-aware graph SLAM</td><td>Map accuracy on constrained links</td><td>+22.7%</td></tr>
             <tr class="results__gap" aria-hidden="true"><td colspan="4"></td></tr>
             <tr><td>2025</td><td>Master's thesis, MAGMA</td><td>Multi-task GP surrogate, R²</td><td>≈ 0.99</td></tr>
