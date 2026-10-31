@@ -25,10 +25,10 @@
       <header class="hero__top">
         <a class="wordmark" href="#top">Shubham Nagar</a>
         <nav class="hero__nav" aria-label="Sections">
+          <a class="link" href="#about">About</a>
           <a class="link" href="#work">Work</a>
           <a class="link" href="#results">Results</a>
           <a class="link" href="#data">Data</a>
-          <a class="link" href="#about">About</a>
         </nav>
         <nav class="profiles" aria-label="Profiles">
           <a class="link" href="https://github.com/shubham4413" target="_blank" rel="noreferrer">GitHub</a>
@@ -39,44 +39,47 @@
 
       <div class="strip" data-strip>
         <ul class="strip__track" data-strip-track>
-          <li class="strip__frame" data-caption="ERH Physical AI Hackathon, Zurich. 2nd in the Imagine, then Act track" data-clip="assets/clips/erh-scene.mp4">
-            <a href="#erh"><img src="assets/frames/erh-scene-002_5.webp" alt="SO-101 arm reaching for Snickers bars beside a plate, scene camera" width="960" height="720"></a>
+          <li class="strip__frame strip__frame--clip">
+            <a href="#erh"><video data-loop muted loop playsinline preload="metadata" poster="assets/clips/erh-snickers.webp" width="640" height="480" aria-label="FLUX.3 Action world model placing Snickers bars on a plate with a physical SO-101, 2 times speed"><source src="assets/clips/erh-snickers.mp4" type="video/mp4"></video></a>
+            <p class="strip__cap">ERH hackathon, 2nd in track. FLUX.3 Action world model placing Snickers, 2× speed</p>
           </li>
-          <li class="strip__frame" data-caption="SmolVLA nut stacking on a physical SO-101. 75% full-stack success" data-clip="assets/clips/smolvla.mp4">
-            <a href="#smolvla"><img src="assets/frames/smolvla-018_0.webp" alt="SO-101 arm placing a red nut onto a stack under a SmolVLA policy" width="1272" height="720"></a>
+          <li class="strip__frame strip__frame--clip">
+            <a href="#smolvla"><video data-loop muted loop playsinline preload="metadata" poster="assets/clips/smolvla.webp" width="960" height="544" aria-label="SmolVLA policy stacking nuts with a physical SO-101"><source src="assets/clips/smolvla.mp4" type="video/mp4"></video></a>
+            <p class="strip__cap">SmolVLA nut stacking on a physical SO-101. 75% full-stack success</p>
           </li>
-          <li class="strip__frame" data-caption="KUKA iiwa at WZL. Perception to MoveIt pick-and-place" data-clip="assets/clips/kuka.mp4">
+          <li class="strip__frame strip__frame--clip">
+            <a href="#erh"><video data-loop muted loop playsinline preload="metadata" poster="assets/clips/erh-cups.webp" width="640" height="480" aria-label="FLUX.3 Action world model stacking paper cups with a physical SO-101, 2 times speed"><source src="assets/clips/erh-cups.mp4" type="video/mp4"></video></a>
+            <p class="strip__cap">FLUX.3 Action world model stacking paper cups, 2× speed</p>
+          </li>
+          <li class="strip__frame">
             <a href="#kuka"><img src="assets/frames/kuka-009_0.webp" alt="KUKA iiwa lowering its gripper into a disassembly fixture" width="1280" height="720"></a>
+            <p class="strip__cap">KUKA iiwa at WZL. Perception to MoveIt pick-and-place</p>
           </li>
-          <li class="strip__frame" data-caption="ERH wrist camera. Snickers placement, 8 of 10 on the real arm">
-            <a href="#erh"><img src="assets/frames/erh-wrist-003_0.webp" alt="Wrist-camera view of the gripper holding a Snickers bar" width="960" height="720"></a>
-          </li>
-          <li class="strip__frame" data-caption="ACT policy in Gazebo. Autonomous nut stacking in simulation" data-clip="assets/clips/act.mp4">
+          <li class="strip__frame">
             <a href="#act"><img src="assets/frames/act-016_0.webp" alt="Simulated SO-101 stacking a red nut in Gazebo" width="566" height="720"></a>
+            <p class="strip__cap">ACT policy in Gazebo. Autonomous stacking in simulation</p>
           </li>
-          <li class="strip__frame" data-caption="Kinova Gen3. Hand-held IMU teleoperation" data-clip="assets/clips/kinova.mp4">
+          <li class="strip__frame">
             <a href="#kinova"><img src="assets/frames/kinova-005_0.webp" alt="Shubham steering a Kinova Gen3 arm with a hand-held sensor" width="1280" height="720"></a>
+            <p class="strip__cap">Kinova Gen3. Hand-held IMU teleoperation</p>
           </li>
-          <li class="strip__frame" data-caption="Intrinsic AI for Industry Challenge. Cable insertion, 35th globally" data-clip="assets/clips/intrinsic.mp4">
+          <li class="strip__frame">
             <a href="#intrinsic"><img src="assets/frames/intrinsic-010_0.webp" alt="Simulated gripper guiding an orange cable plug toward a port" width="676" height="720"></a>
+            <p class="strip__cap">Intrinsic challenge. Cable insertion, 35th globally</p>
           </li>
-          <li class="strip__frame" data-caption="Multi-robot graph SLAM. +22.7% map accuracy on constrained links" data-clip="assets/clips/slam.mp4">
+          <li class="strip__frame">
             <a href="#slam"><img src="assets/frames/slam-015_0.webp" alt="Merged lidar map of a walled arena, coloured by height" width="630" height="720"></a>
+            <p class="strip__cap">Multi-robot graph SLAM. +22.7% map accuracy</p>
           </li>
-          <li class="strip__frame" data-caption="ERH scene camera. Paper-cup stacking, 5 of 10 on the real arm">
-            <a href="#erh"><img src="assets/frames/erh-scene-013_5.webp" alt="SO-101 arm stacking white paper cups" width="960" height="720"></a>
-          </li>
-          <li class="strip__frame" data-caption="KUKA iiwa. Validated object pose handed to a deterministic MoveIt skill">
-            <a href="#kuka"><img src="assets/frames/kuka-017_0.webp" alt="KUKA iiwa bent over the fixture during a pick" width="1280" height="720"></a>
-          </li>
-          <li class="strip__frame" data-caption="Gazebo bridge log. Every joint command passes a safety clamp">
+          <li class="strip__frame">
             <a href="#act"><img src="assets/frames/act-log-012_0.webp" alt="Terminal log from the ACT Gazebo bridge listing step, safety clamp and camera skew" width="630" height="300"></a>
+            <p class="strip__cap">Gazebo bridge log. A safety clamp on every joint command</p>
           </li>
-          <li class="strip__frame" data-caption="SmolVLA, best checkpoint. 92% of rollouts grasp the nut">
-            <a href="#smolvla"><img src="assets/frames/smolvla-037_0.webp" alt="SO-101 arm holding a nut above a two-nut stack" width="1272" height="720"></a>
+          <li class="strip__frame">
+            <a href="#kuka"><img src="assets/frames/kuka-017_0.webp" alt="KUKA iiwa bent over the fixture during a pick" width="1280" height="720"></a>
+            <p class="strip__cap">KUKA iiwa. Validated pose handed to a MoveIt skill</p>
           </li>
         </ul>
-        <p class="strip__caption" data-strip-caption aria-live="polite">ERH Physical AI Hackathon, Zurich. 2nd in the Imagine, then Act track</p>
       </div>
 
       <div class="hero__foot">
@@ -91,6 +94,34 @@
       </div>
     </section>
 
+    <section class="intro" id="about" aria-labelledby="about-title">
+      <div class="intro__side">
+        <img class="intro__photo" src="assets/portrait-berlin.webp" alt="Shubham Nagar in front of the Berlin Cathedral" width="960" height="1200" loading="lazy">
+        <dl class="intro__facts" data-reveal>
+          <div><dt>Based in</dt><dd>Aachen, Germany</dd></div>
+          <div><dt>Available</dt><dd>Full-time from November 2026</dd></div>
+          <div><dt>Work authorization</dt><dd>Valid German work visa</dd></div>
+          <div><dt>Languages</dt><dd>English C1, German A2</dd></div>
+        </dl>
+      </div>
+      <div class="intro__text">
+        <h2 id="about-title" data-reveal>About me</h2>
+        <p class="intro__lead" data-reveal>I am finishing an MSc in Robotic Systems Engineering at RWTH Aachen, with a GPA of 1.7 and graduation in November 2026. My focus is robot learning on real hardware: recording demonstrations, fine-tuning imitation-learning and vision-language-action policies, and scoring them on physical arms.</p>
+        <div data-reveal>
+          <p>My coursework covers Advanced Robotics, Kinematics and Dynamics, Advanced Machine Learning, Reinforcement Learning and Control Systems. Alongside it, I work as a Physical AI research assistant at the WZL Smart Automation Lab, building perception and manipulation for an LLM task planner on a KUKA iiwa.</p>
+          <p>My master's thesis at MAGMA keeps injection-molded product quality on target under physical process disturbances, using a multi-task Gaussian-process surrogate and contextual inverse optimization. There I also built and shipped a Dash application for training, inspecting and serving surrogate models, with Docker and a GitLab CI pipeline, now used across the company.</p>
+          <p>Before RWTH, I spent three years as a mechanical design engineer at Dover in Bangalore.</p>
+          <p>Day to day I use Python, C++, PyTorch, LeRobot, ROS 2, MoveIt 2, Gazebo, Isaac Sim, OpenCV, Docker and Linux.</p>
+        </div>
+        <h3 class="intro__sub" data-reveal>Experience</h3>
+        <ul class="rows" data-reveal>
+          <li><span><b>Physical AI Research Assistant</b>, WZL Smart Automation Lab, RWTH</span><span class="nums">2026 to present</span></li>
+          <li><span><b>ML Developer and Master's Thesis</b>, MAGMA</span><span class="nums">2025 to present</span></li>
+          <li><span><b>Design Engineer</b>, Dover India, Bangalore</span><span class="nums">2021 to 2024</span></li>
+        </ul>
+      </div>
+    </section>
+
     <section class="work" id="work" aria-labelledby="work-title">
       <h2 class="work__title" id="work-title" data-reveal>Seven robot projects</h2>
 
@@ -98,16 +129,19 @@
         <ul class="reel" data-reel>
           <li><img src="assets/frames/erh-wrist-003_0.webp" alt="Wrist camera: gripper closing on a Snickers bar" width="960" height="720" loading="lazy"></li>
           <li class="reel__clip">
-            <video data-loop muted loop playsinline preload="none" class="is-composite" poster="assets/clips/erh.webp" width="1280" height="720" aria-label="Team Trainers' timelapse of SO-101 Snickers placement and cup stacking, scene and wrist cameras">
-              <source src="assets/clips/erh.mp4" type="video/mp4">
+            <video data-loop class="is-composite" muted loop playsinline preload="none" poster="assets/clips/erh-snickers-both.webp" width="1280" height="480" aria-label="FLUX.3 Action placing three Snickers bars on a plate, scene and wrist cameras, 2 times speed">
+              <source src="assets/clips/erh-snickers-both.mp4" type="video/mp4">
             </video>
           </li>
-          <li><img src="assets/frames/erh-scene-006_0.webp" alt="SO-101 placing a Snickers bar on the plate" width="960" height="720" loading="lazy"></li>
+          <li>
+            <video data-loop class="is-composite" muted loop playsinline preload="none" poster="assets/clips/erh-cups-both.webp" width="1280" height="480" aria-label="FLUX.3 Action stacking paper cups, scene and wrist cameras, 2 times speed">
+              <source src="assets/clips/erh-cups-both.mp4" type="video/mp4">
+            </video>
+          </li>
           <li><img src="assets/frames/erh-scene-016_5.webp" alt="SO-101 lifting a paper cup" width="960" height="720" loading="lazy"></li>
-          <li><img src="assets/frames/erh-wrist-017_0.webp" alt="Wrist camera: gripper next to a paper cup" width="960" height="720" loading="lazy"></li>
         </ul>
         <div class="facts" data-reveal>
-          <div class="facts__name"><h3 id="erh-title">ERH Physical AI Hackathon, Zurich</h3><p>FLUX.3 Action on SO-101</p></div>
+          <div class="facts__name"><h3 id="erh-title">ERH Physical AI Hackathon, Zurich</h3><p>FLUX.3 Action on SO-101, clips at 2× speed</p></div>
           <p class="facts__result">2nd in the Imagine, then Act track</p>
           <p class="facts__year">October 2026</p>
           <p class="facts__stack">Team Trainers, 30 hours at DARE campus</p>
@@ -250,12 +284,12 @@
         </div>
       </article>
 
-      <article class="project project--minor" id="slam" aria-labelledby="slam-title">
+      <article class="project" id="slam" aria-labelledby="slam-title">
         <ul class="reel" data-reel>
           <li><img src="assets/frames/slam-world-010_0.webp" alt="Gazebo arena with walls and obstacles for two robots" width="790" height="720" loading="lazy"></li>
           <li class="reel__clip">
-            <video data-loop muted loop playsinline preload="none" poster="assets/clips/slam.webp" width="630" height="720" aria-label="Merged multi-robot lidar map building up under a constrained link">
-              <source src="assets/clips/slam.mp4" type="video/mp4">
+            <video data-loop muted loop playsinline preload="none" poster="assets/clips/slam-full.webp" width="1600" height="966" aria-label="Full screen recording: the Gazebo world, the merged lidar map in RViz and the bandwidth monitor while two robots map under a shaped link">
+              <source src="assets/clips/slam-full.mp4" type="video/mp4">
             </video>
           </li>
           <li><img src="assets/frames/slam-gui-020_0.webp" alt="Monitoring panel showing bandwidth, latency and data saved per robot" width="1380" height="290" loading="lazy"></li>
@@ -264,13 +298,14 @@
         <div class="facts" data-reveal>
           <div class="facts__name"><h3 id="slam-title">Network-aware multi-robot SLAM</h3><p>MMI, RWTH Aachen</p></div>
           <p class="facts__result">+22.7% map accuracy on constrained links</p>
-          <p class="facts__year">2025 to present</p>
+          <p class="facts__year">November 2025 to May 2026</p>
           <p class="facts__stack">C++, ROS 2, QEMU, PyQt</p>
         </div>
         <div class="project__body" data-reveal>
           <p>I wrote the C++ communication layer that adapts VoxelGrid point-cloud transmission to the available link, and tested it on two robot VMs under QEMU with TAP networking and bandwidth and latency shaped at runtime. It removed the communication bottleneck of decentralized multi-robot graph SLAM. A PyQt monitor shows bandwidth, latency and data saved for each robot.</p>
           <ul class="project__links">
             <li><a class="link-plain" href="https://github.com/shubham4413/network_aware_mrg_slam" target="_blank" rel="noreferrer">Repository</a></li>
+            <li><a class="link-plain" href="assets/clips/slam-full.mp4" target="_blank" rel="noreferrer">Full recording</a></li>
           </ul>
         </div>
       </article>
@@ -318,9 +353,9 @@
             <tr><td></td><td>SmolVLA, batch 16, 20k steps</td><td>Grasp or better</td><td>92%</td></tr>
             <tr><td></td><td>ACT, 52M parameters</td><td>Nut stacking in Gazebo</td><td>Autonomous, simulation only</td></tr>
             <tr><td></td><td>Intrinsic AI for Industry Challenge</td><td>Global ranking</td><td>35th</td></tr>
+            <tr><td></td><td>Network-aware graph SLAM</td><td>Map accuracy on constrained links</td><td>+22.7%</td></tr>
             <tr class="results__gap" aria-hidden="true"><td colspan="4"></td></tr>
-            <tr><td>2025</td><td>Network-aware graph SLAM</td><td>Map accuracy on constrained links</td><td>+22.7%</td></tr>
-            <tr><td></td><td>Master's thesis, MAGMA</td><td>Multi-task GP surrogate, R²</td><td>≈ 0.99</td></tr>
+            <tr><td>2025</td><td>Master's thesis, MAGMA</td><td>Multi-task GP surrogate, R²</td><td>≈ 0.99</td></tr>
           </tbody>
         </table>
       </div>
@@ -349,34 +384,8 @@
       </div>
     </section>
 
-    <section class="about" id="about" aria-labelledby="about-title">
-      <div class="about__row">
-        <dl class="about__facts" data-reveal>
-          <div><dt>Based in</dt><dd>Aachen, Germany</dd></div>
-          <div><dt>Studying</dt><dd>MSc Robotic Systems Engineering, RWTH Aachen, GPA 1.7</dd></div>
-          <div><dt>Available</dt><dd>Full-time from November 2026, valid German work visa</dd></div>
-          <div><dt>Languages</dt><dd>English C1, German A2</dd></div>
-        </dl>
-        <div class="about__text" data-reveal>
-          <h2 id="about-title">From valves to policies</h2>
-          <p>I started as a mechanical engineer: three years at Dover in Bangalore designing pneumatic valves, from 3D CAD and GD&amp;T drawings to PLM release. At RWTH I moved into robot software and learning.</p>
-          <p>My master's thesis at MAGMA keeps injection-molded product quality on target under physical process disturbances. It estimates melt viscosity from filling-phase pressure curves and picks the holding pressure by contextual inverse optimization over a multi-task Gaussian-process surrogate. As a research assistant there, I built and shipped a Dash application for training, inspecting and serving surrogate models, containerized with a GitLab CI pipeline and deployed across the company.</p>
-          <p>Day to day I use Python, C++, PyTorch, LeRobot, ROS 2, MoveIt 2, Gazebo, Isaac Sim, OpenCV, Docker and Linux.</p>
-        </div>
-      </div>
-      <div class="about__row">
-        <p class="about__label">Experience</p>
-        <ul class="rows rows--wide" data-reveal>
-          <li><span><b>Physical AI Research Assistant</b>, WZL Smart Automation Lab, RWTH</span><span class="nums">2026 to present</span></li>
-          <li><span><b>ML Developer and Master's Thesis</b>, MAGMA</span><span class="nums">2025 to present</span></li>
-          <li><span><b>Design Engineer</b>, Dover India, Bangalore</span><span class="nums">2021 to 2024</span></li>
-        </ul>
-      </div>
-    </section>
-
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <p class="contact__sentence" data-reveal>Open to full-time robot-learning roles from November 2026.</p>
-      <img class="contact__portrait" src="assets/portrait.webp" alt="Portrait of Shubham Nagar" width="360" height="360" loading="lazy">
       <div class="contact__links" data-reveal>
         <h2 id="contact-title">Hiring for robot learning?</h2>
         <a class="link-plain" href="mailto:shubham.nagar@rwth-aachen.de">shubham.nagar@rwth-aachen.de</a>

@@ -54,59 +54,12 @@ function centreOn(track, item) {
   track.scrollLeft = Math.max(0, left);
 }
 
-// Hero strip: the frame nearest the centre is lit, captioned and, when it has a clip, playing.
+// Hero strip: a sideways row that starts on the world-model clips; mouse users can drag it.
 (() => {
-  const strip = document.querySelector('[data-strip]');
-  if (!strip) return;
-  const track = strip.querySelector('[data-strip-track]');
-  const caption = strip.querySelector('[data-strip-caption]');
-  const frames = [...track.children];
-  frames.forEach((f, i) => f.style.setProperty('--i', i));
-  let current = null, queued = false, heroVisible = true;
-
-  const clipFor = (frame) => {
-    if (!frame.dataset.clip || !autoplayOK()) return null;
-    let v = frame.querySelector('video');
-    if (!v) {
-      v = document.createElement('video');
-      Object.assign(v, { muted: true, loop: true, playsInline: true, preload: 'auto' });
-      v.setAttribute('aria-hidden', 'true');
-      v.poster = frame.querySelector('img').src;
-      v.src = frame.dataset.clip;
-      frame.querySelector('a').appendChild(v);
-    }
-    return v;
-  };
-
-  const update = () => {
-    queued = false;
-    const mid = track.getBoundingClientRect().left + track.clientWidth / 2;
-    let best = frames[0], bestD = Infinity;
-    for (const f of frames) {
-      const r = f.getBoundingClientRect();
-      const d = Math.abs(r.left + r.width / 2 - mid);
-      if (d < bestD) { bestD = d; best = f; }
-    }
-    if (best !== current) {
-      if (current) { current.classList.remove('is-centre'); const v = current.querySelector('video'); if (v) v.pause(); }
-      current = best;
-      current.classList.add('is-centre');
-      caption.textContent = current.dataset.caption;
-    }
-    const v = clipFor(current);
-    if (v) heroVisible ? v.play().catch(() => {}) : v.pause();
-    const x = Math.max(0, current.getBoundingClientRect().left - strip.getBoundingClientRect().left - parseFloat(getComputedStyle(caption).paddingLeft));
-    caption.style.transform = `translateX(${Math.max(0, Math.min(x, strip.clientWidth - caption.offsetWidth)).toFixed(0)}px)`;
-  };
-  const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
-
-  track.addEventListener('scroll', queue, { passive: true });
-  addEventListener('resize', queue);
-  new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; queue(); }).observe(strip);
+  const track = document.querySelector('[data-strip-track]');
+  if (!track) return;
+  [...track.children].forEach((f, i) => f.style.setProperty('--i', i));
   draggable(track);
-  centreOn(track, frames[1]);
-  update();
-  addEventListener('load', () => { centreOn(track, frames[1]); update(); });
 })();
 
 // Project reels: start with the clip in the middle, its neighbours cut by the edges.
